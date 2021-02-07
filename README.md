@@ -6,3 +6,22 @@ The best way to interact with us is to test tools and make bug reports through G
 
 If you are a developer. See:
 * [Coding Style](https://github.com/ackerman2001/OpenCDK/wiki/Coding-Style)
+## Building
+Caitlyn language is supported for Linux but other platforms should be able to buid Open Caitlyn Development Kit
+First of all you will need to install gcc-10
+```
+sudo apt-get-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install gcc-10
+```
+Next we have to clone the repository
+```
+git clone https://github.com/ackerman2001/OpenCDK.git
+cd OpenCDK
+```
+To install Caitlyn virtual machine
+```
+cd tools/cvm/src
+gcc cvm.c -o cvm
+```
+
