@@ -10,7 +10,7 @@ If you are a developer. See:
 Caitlyn language is supported for Linux but other platforms should be able to buid Open Caitlyn Development Kit.
 First of all you will need to install gcc-10
 ```
-sudo apt-get-repository ppa:ubuntu-toolchain-r/test
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt-get update
 sudo apt-get install gcc-10
 ```
