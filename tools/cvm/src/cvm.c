@@ -8,8 +8,8 @@ int main(int argc, char** argv)
 	short opcode;
 	int file_size;
 	FILE *file;
-	char *filename = argv[1]; //assign *filename to argument 1
-	file = fopen(filename, "rb"); //load file
+	char *file_name = argv[1]; //assign *filename to argument 1
+	file = fopen(file_name, "rb"); //load file
 	g_memory = malloc(sizeof(char));
 	if (file == NULL) //if file doesn't exist
 	{
