@@ -12,12 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+    - name: Build
+      working-directory: ${{runner.workspace}}/build
+      shell: bash
+      run: gcc /tools/cvm/src/cvm.c
