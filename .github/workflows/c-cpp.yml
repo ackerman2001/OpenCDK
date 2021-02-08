@@ -12,4 +12,4 @@ jobs:
     steps:
     - name: Build
       shell: bash
-      run: gcc "${GITHUB_WORKSPACE}/tools/cvm/src/cvm.c"
+      run: gcc README.md
