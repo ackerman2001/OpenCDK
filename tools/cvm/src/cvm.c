@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+double g_memory[];
+
 int main(int argc, char** argv)
 {
 	short opcode;
