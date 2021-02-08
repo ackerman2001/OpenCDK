@@ -12,4 +12,4 @@ jobs:
     steps:
     - name: Build
       shell: bash
-      run: gcc README.md
+      run: gcc --version
