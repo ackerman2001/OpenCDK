@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-unsigned char g_memory[];
+unsigned char *g_memory = NULL;
 
 int main(int argc, char** argv)
 {
@@ -10,9 +10,11 @@ int main(int argc, char** argv)
 	FILE *file;
 	char *filename = argv[1]; //assign *filename to argument 1
 	file = fopen(filename, "rb"); //load file
+	g_memory = malloc(sizeof(char));
 	if (file == NULL) //if file doesn't exist
 	{
 		printf("Could not open file.\n");
+		free(g_memory);
 		exit(-1);
 	}
 	fseek(file, 0, SEEK_END); //point to the end of the file
@@ -23,5 +25,6 @@ int main(int argc, char** argv)
 	{
 		g_memory[i] = fgetc(file);
 	}
+	free(g_memory);
 	return 0; //return value from a function.
 }
