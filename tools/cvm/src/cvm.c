@@ -15,6 +15,7 @@ int main(int argc, char** argv)
 	}
 	fseek(file, 0, SEEK_END); //point to the end of the file
 	file_size = ftell(file);
+	fseek(file, 0, SEEK_SET);
 	printf("%d\n", file_size);
 	return 0; //return value from a function.
 }
