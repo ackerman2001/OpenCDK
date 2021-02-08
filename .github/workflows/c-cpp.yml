@@ -11,10 +11,10 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      working-directory: ./tools/cvm/src/
+      working-directory: ./tools
 
     steps:
     - name: Build
       shell: bash
-      run: gcc cvm.c -o cvm
+      run: cvm/src/gcc cvm.c -o cvm
       working-directory: ${{evn.working-directory}}
