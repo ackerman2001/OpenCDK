@@ -15,4 +15,4 @@ jobs:
     - name: Build
       working-directory: ${{runner.workspace}}/build
       shell: bash
-      run: gcc /tools/cvm/src/cvm.c
+      run: ls
