@@ -19,7 +19,7 @@ int main(int argc, char** argv)
 	file_size = ftell(file);
 	fseek(file, 0, SEEK_SET);
 	printf("%d \n", file_size);
-	for(int i = 0; i < file_size; i = i + 1)
+	for(int i = 1048576; i < file_size + 1048576; i = i + 1)
 	{
 		g_memory[i] = fgetc(file);
 	}
