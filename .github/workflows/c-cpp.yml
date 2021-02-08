@@ -12,4 +12,10 @@ jobs:
     steps:
     - name: Build
       shell: bash
-      run: gcc --version
+      run: cd ..
+    - name: Build2
+      shell: bash
+      run: cd ..
+    - name: Build3
+      shell: bash
+      run: cd tools
