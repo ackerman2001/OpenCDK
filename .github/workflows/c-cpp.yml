@@ -14,4 +14,4 @@ jobs:
     steps:
     - name: Build
       shell: bash
-      run: cd ./tools
+      run: ls
