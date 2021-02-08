@@ -14,4 +14,8 @@ jobs:
     steps:
     - name: Build
       shell: bash
-      run: sudo ls
+      run: cd ..
+    
+    - name: Build
+      shell: bash
+      run: ls
