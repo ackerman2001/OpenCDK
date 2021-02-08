@@ -10,10 +10,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./tools
-
+    
     steps:
     - name: Build
       shell: bash
-      run: ls
+      run: gcc .github/tools/cvm/src/cvm.c
