@@ -13,9 +13,9 @@ jobs:
     
     defaults:
       run:
-        working-directory: ./tools/cvm/src/cvm.c
+        working-directory: ./tools
     
     steps:
     - name: Build
       shell: bash
-      run: gcc cvm.c
+      run: cd cvm
