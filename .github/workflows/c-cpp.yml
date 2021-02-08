@@ -18,4 +18,4 @@ jobs:
     
     - name: Build
       shell: bash
-      run: ls
+      run: cd tools
