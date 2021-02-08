@@ -8,9 +8,9 @@ int main(int argc, char** argv)
 	short opcode;
 	int file_size;
 	FILE *file;
-	char *file_name = argv[1]; //assign *filename to argument 1
-	file = fopen(file_name, "rb"); //load file
-	g_memory = malloc(sizeof(char));
+	char *filename = argv[1]; //assign *filename to argument 1
+	file = fopen(filename, "rb"); //load file
+	g_memory = (unsigned char *) malloc(1024*1024);
 	if (file == NULL) //if file doesn't exist
 	{
 		printf("Could not open file.\n");
