@@ -1,5 +1,5 @@
 # OpenCDK
-OpenCDK (Open Caitlyn Development Kit) is a free and open-source implementation of the Caitlyn Platform. This includes Caitlyn compiler and Caitlyn virtual machine (CVM).
+OpenCDK (Open Caitlyn Development Kit) is a free and open-source development kit for Caitlyn programming language. This includes Caitlyn compiler and Caitlyn virtual machine (CVM).
 * [About Caitlyn programming language](https://github.com/ackerman2001/OpenCDK/wiki/Caitlyn-programming-language)
 ## Contributing
 The best way to interact with us is to test tools and make bug reports through GitHub.
