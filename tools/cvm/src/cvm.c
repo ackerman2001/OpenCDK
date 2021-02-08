@@ -4,7 +4,7 @@
 
 unsigned char *g_memory = NULL;
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
 	long R[0xF]; //registers
 	int file_size;
