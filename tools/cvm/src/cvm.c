@@ -4,7 +4,7 @@
 
 unsigned char *g_memory = NULL;
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
 	long R[0xF]; //registers
 	int file_size;
@@ -21,16 +21,17 @@ int main(int argc, char **argv)
 	fseek(file, 0, SEEK_END); //point to the end of the file
 	file_size = ftell(file); //get the value of file pointer
 	fseek(file, 0, SEEK_SET); //point to the start of the file
-	printf("file size: %d \n", file_size); //print file size
+        //printf("file size: %d \n", file_size);
+       	//print file size
 	for(int i = 1048576; i < file_size + 1048576; i = i + 1)
 	{
 		g_memory[i] = fgetc(file); //load data into memory
 	}
-	for(int pc = 0; pc*2 < file_size; pc = pc + 1)
+	for(int bc = 0; bc  < file_size; bc = bc + 2)
 	{
-		unsigned char byte1 = g_memory[1048576 + pc];
-		unsigned char byte2 = g_memory[1048577 + pc];
-		execution((byte1 << 8) | byte2);
+		unsigned char byte1 = g_memory[1048576 + bc];
+		unsigned char byte2 = g_memory[1048577 + bc];
+		execution((byte1 << 8) | byte2, g_memory, &bc, R);
 	}
 	free(g_memory); //free memory
 	return 0; //return value from a function.
