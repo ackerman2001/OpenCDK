@@ -16,4 +16,4 @@ jobs:
     steps:
     - name: Build
       shell: bash
-      run: cvm/src/gcc cvm.c -o cvm
+      run: gcc --version
