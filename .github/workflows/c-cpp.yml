@@ -11,11 +11,11 @@ jobs:
 
     runs-on: ubuntu-latest
     
+    defaults:
+      run:
+        working-directory: ./tools/cvm/src/cvm.c
+    
     steps:
     - name: Build
       shell: bash
-      run: cd ..
-    
-    - name: Build
-      shell: bash
-      run: cd tools
+      run: gcc cvm.c
