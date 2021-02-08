@@ -14,4 +14,4 @@ jobs:
     steps:
     - name: Build
       shell: bash
-      run: gcc .github/tools/cvm/src/cvm.c
+      run: cd ./tools
