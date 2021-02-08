@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-double g_memory[];
+unsigned char g_memory[];
 
 int main(int argc, char** argv)
 {
@@ -19,5 +19,9 @@ int main(int argc, char** argv)
 	file_size = ftell(file);
 	fseek(file, 0, SEEK_SET);
 	printf("%d \n", file_size);
+	for(int i = 0; i < file_size; i = i + 1)
+	{
+		g_memory[i] = fgetc(file);
+	}
 	return 0; //return value from a function.
 }
