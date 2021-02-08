@@ -3,8 +3,6 @@ name: C/C++ CI
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
@@ -14,5 +12,4 @@ jobs:
     steps:
     - name: Build
       shell: bash
-      run: cd cvm
-      working-directory: tools
+      run: chmod +x "${GITHUB_WORKSPACE}/tools/cvm/src/cvm.c"
