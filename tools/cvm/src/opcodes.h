@@ -2,10 +2,10 @@
 
 void execution(unsigned short opcode, unsigned char *memory, int *pc, long *R)
 {
-	unsigned char b[7];
+	unsigned long b[7];
 	for(int i = 0; i < 7; i++)
 	{
-		b[i] = memory[pc + 1 + i];	
+		b[i] = memory[*pc + 1 + i];	
 	}
 	switch(opcode)
 	{
