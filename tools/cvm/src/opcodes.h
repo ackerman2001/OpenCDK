@@ -1,24 +1,31 @@
 #include<stdio.h>
 
-void execution(unsigned short opcode, unsigned char *memory, int *pc, long *R)
+void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R)
 {
-	unsigned long b[7];
-	for(int i = 0; i < 7; i++)
-	{
-		b[i] = memory[*pc + 1 + i];	
-	}
+	unsigned long b[8];
 	switch(opcode)
 	{
 		case 0x00:
+			for(int i = 0; i < 8; i++) 
+			{
+				b[i] = memory[*pc + 1 + i];
+			}
 			R[0xA] = (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0];
-			pc += 8;
+			*(pc) += 8;
+			break;
+		case 0xFE:
+			for(int i = 0; i < 20; i++)
+			{
+				if(memory[R[0xA]+i] == 0x00)
+				{
+					break;
+				}
+				printf("%c", memory[R[0xA]+i]);	
+			}
 			break;
 		case 0xFF:
-			while(memory[R[0xA]] != 0x00)
-			for(int i = 0; memory[R[0xA]+i] != 0x00; i++)
-			{
-				printf("%c", memory[R[0xA] + i]);	
-			}
+			exit(0);
 			break;
 	}
 }
+
