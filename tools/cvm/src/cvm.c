@@ -24,11 +24,11 @@ int main(int argc, char** argv)
 	fseek(file, 0, SEEK_SET); //point to the start of the file
         //printf("file size: %d \n", file_size);
        	//print file size
-	for(int i = 1048576; i < file_size + 1048576; i = i + 1)
+	for(int i = 0; i < file_size; i = i + 1)
 	{
 		g_memory[i] = fgetc(file); //load data into memory
 	}
-	for(int pc = 0; pc  < file_size;)
+	for(int pc = 0; pc < file_size; pc = pc + 1)
 	{
 		execution(g_memory[pc], g_memory, &pc, R);
 	}
