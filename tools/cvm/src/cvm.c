@@ -3,6 +3,7 @@
 #include "opcodes.h"
 
 unsigned char *g_memory = NULL;
+unsigned char *g_stack[1048576];
 
 int main(int argc, char** argv)
 {
@@ -27,11 +28,9 @@ int main(int argc, char** argv)
 	{
 		g_memory[i] = fgetc(file); //load data into memory
 	}
-	for(int bc = 0; bc  < file_size; bc = bc + 2)
+	for(int pc = 0; pc  < file_size;)
 	{
-		unsigned char byte1 = g_memory[1048576 + bc];
-		unsigned char byte2 = g_memory[1048577 + bc];
-		execution((byte1 << 8) | byte2, g_memory, &bc, R);
+		execution(g_memory[pc], g_memory, &pcc, R);
 	}
 	free(g_memory); //free memory
 	return 0; //return value from a function.
