@@ -30,7 +30,7 @@ int main(int argc, char** argv)
 	}
 	for(int pc = 0; pc  < file_size;)
 	{
-		execution(g_memory[pc], g_memory, &pcc, R);
+		execution(g_memory[pc], g_memory, &pc, R);
 	}
 	free(g_memory); //free memory
 	return 0; //return value from a function.
