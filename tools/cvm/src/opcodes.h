@@ -14,7 +14,7 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R)
 			*(pc) += 8;
 			break;
 		case 0xFE:
-			for(int i = 0; i < 20; i++)
+			for(int i = 0; i < 2048; i++)
 			{
 				if(memory[R[0xA]+i] == 0x00)
 				{
@@ -28,4 +28,3 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R)
 			break;
 	}
 }
-
