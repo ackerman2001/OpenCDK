@@ -12,7 +12,7 @@ int main(int argc, char** argv)
 	FILE *file;
 	char *filename = argv[1]; //assign *filename to argument 1
 	file = fopen(filename, "rb"); //load file
-	g_memory = (unsigned char *) malloc(4294965097 * sizeof(char)); //4 GB of memory allocation.
+	g_memory = (unsigned char *) malloc(2147483648 * sizeof(char)); //4 GB of memory allocation.
 	if (file == NULL) //if file doesn't exist
 	{
 		printf("Could not open file.\n");
