@@ -22,7 +22,7 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R)
 			*(pc) += 8;
 			break;
 		case 0xFD:
-			scanf("%s", &memory[R[0xA]];
+			scanf("%s", &memory[R[0xA]]);
 			break;
 		case 0xFE:
 			for(int i = 0; i < 2048; i++)
