@@ -19,4 +19,4 @@ jobs:
     - name: install GLFW-dev
       run: sudo apt-get install libglfw3-dev
     - name: build
-      run: gcc cvm.c -o cvm -lglfw -lGLU -lGL
+      run: gcc tools/cvm/src/cvm.c -lglfw -lGLU -lGL
