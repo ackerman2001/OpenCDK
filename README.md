@@ -15,6 +15,11 @@ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt-get update
 sudo apt-get install gcc-10
 ```
+and you need GLFW
+```
+sudo apt-get install libglfw3
+sudo apt-get install libglfw3-dev
+```
 Next we have to clone the repository
 ```
 git clone https://github.com/ackerman2001/OpenCDK.git
@@ -23,6 +28,6 @@ cd OpenCDK
 To build Caitlyn virtual machine
 ```
 cd tools/cvm/src
-gcc cvm.c -o cvm
-```
+gcc cvm.c -o cvm -lglfw -lGLU -lGL
+``` 
 
