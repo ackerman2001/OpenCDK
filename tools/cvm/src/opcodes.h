@@ -102,6 +102,9 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 		case 0x0D:
 			R[b[0]] = R[b[0]] + 1;
 			*(pc) += 1;
+		case 0x0F:
+			R[b[0]] = R[b[0]] - 1;
+			*(pc) += 1;
 		case 0xFC:
 			*CW = 1;
 			break;
