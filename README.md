@@ -5,7 +5,7 @@ OpenCDK (Open Caitlyn Development Kit) is a free and open-source development kit
 The best way to interact with us is to test tools and make bug reports through GitHub.
 * [Issues](https://github.com/ackerman2001/OpenCDK/issues)
 
-If you are a developer. Please see:
+If you are a developer. Please check:
 * [Coding Style](https://github.com/ackerman2001/OpenCDK/wiki/Coding-Style)
 ## Building
 Caitlyn language is supported for Linux but other platforms should be able to build it too.
