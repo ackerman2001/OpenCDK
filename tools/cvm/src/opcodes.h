@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<GLFW/glfw3.h>
 
-void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GLFWwindow *window, char *CW)
+void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GLFWwindow *window, int *CW)
 {
 	unsigned long b[8];
 	switch(opcode)
