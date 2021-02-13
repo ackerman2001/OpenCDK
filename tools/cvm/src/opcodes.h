@@ -7,7 +7,7 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 	//variables
 	unsigned long b[8];
 	
-	//combine b1-b8 (b[7]-b[0])
+	//combines b1-b8 (b[7]-b[0])
 	for(int i = 0; i < 8; i++) 
 	{
 		b[i] = memory[*pc + 1 + i];
