@@ -100,7 +100,7 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 		case 0x0C:
 			R[0xA] = R[0xA] + 1;
 		case 0x0D:
-			R[b1] = R[b1] + 1;
+			R[b[0]] = R[b[0]] + 1;
 			*(pc) += 1;
 		case 0xFC:
 			*CW = 1;
