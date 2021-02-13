@@ -11,55 +11,55 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 	{
 		b[i] = memory[*pc + 1 + i];
 	}
-	
+
 	switch(opcode)
 	{
 		case 0x00:
-			R[0xA] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
+			R[0xA] = b[7] | b[6] | b[5] | b[4] | b[3] | b[2] | b[1] | b[0];
 			*(pc) += 8;
 			break;
 		case 0x01:
-			R[0xB] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
+			R[0xB] = b[7] | b[6] | b[5] | b[4] | b[3] | b[2] | b[1] | b[0];
 			*(pc) += 8;
 			break;
 		case 0x02:
-			R[0xC] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
+			R[0xC] = b[7] | b[6] | b[5] | b[4] | b[3] | b[2] | b[1] | b[0];
 			*(pc) += 8;
 			break;
  		case 0x03:
-			R[0xD] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
+			R[0xD] = b[7] | b[6] | b[5] | b[4] | b[3] | b[2] | b[1] | b[0];
 			*(pc) += 8;
 			break;
 		case 0x04:
-			R[0xE] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
+			R[0xE] = b[7] | b[6] | b[5] | b[4] | b[3] | b[2] | b[1] | b[0];
 			*(pc) += 8;
 			break;
  		case 0x05:
-			R[0xF] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
+			R[0xF] = b[7] | b[6] | b[5] | b[4] | b[3] | b[2] | b[1] | b[0];
 			*(pc) += 8;
 			break;
 		case 0x06:
-			memory[R[0xA]] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
+			memory[R[0xA]] = b[7] | b[6] | b[5] | b[4] | b[3] | b[2] | b[1] | b[0];
 			*(pc) += 8;
 			break;
 		case 0x07:
-			memory[R[0xB]] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
+			memory[R[0xB]] = b[7] | b[6] | b[5] | b[4] | b[3] | b[2] | b[1] | b[0];
 			*(pc) += 8;
 			break;
 		case 0x08:
-			memory[R[0xC]] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
+			memory[R[0xC]] = b[7] | b[6] | b[5] | b[4] | b[3] | b[2] | b[1] | b[0];
 			*(pc) += 8;
 			break;
 		case 0x09:
-			memory[R[0xD]] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
+			memory[R[0xD]] = b[7] | b[6] | b[5] | b[4] | b[3] | b[2] | b[1] | b[0];
 			*(pc) += 8;
 			break;
 		case 0x0A:
-			memory[R[0xE]] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
+			memory[R[0xE]] = b[7] | b[6] | b[5] | b[4] | b[3] | b[2] | b[1] | b[0];
 			*(pc) += 8;
 			break;
 		case 0x0B:
-			memory[R[0xF]] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
+			memory[R[0xF]] = b[7] | b[6] | b[5] | b[4] | b[3] | b[2] | b[1] | b[0];
 			*(pc) += 8;
 			break;
 		case 0x0C:
@@ -81,7 +81,7 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			*(pc) += 1;
 			break;
 		case 0x11:
-			R[0xA] = R[0xA] + b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
+			R[0xA] = R[0xA] + b[7] | b[6] | b[5] | b[4] | b[3] | b[2] | b[1] | b[0];
 			*(pc) += 8;
 			break;
 		case 0xFC:
