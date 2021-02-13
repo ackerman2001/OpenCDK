@@ -9,7 +9,7 @@ If you are a developer. Please see:
 * [Coding Style](https://github.com/ackerman2001/OpenCDK/wiki/Coding-Style)
 ## Building
 Caitlyn language is supported for Linux but other platforms should be able to build it too.
-First of all you will need to install gcc-10
+First of all you will need to install gcc-10.
 ```
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt-get update
