@@ -5,106 +5,81 @@
 void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GLFWwindow *window, int *CW)
 {
 	unsigned long b[8];
+	
+	//Combine b1-b8
+	for(int i = 0; i < 8; i++) 
+	{
+		b[i] = memory[*pc + 1 + i];
+	}
+	
 	switch(opcode)
 	{
 		case 0x00:
-			for(int i = 0; i < 8; i++) 
-			{
-				b[i] = memory[*pc + 1 + i];
-			}
-			R[0xA] = (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0];
+			R[0xA] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
 			*(pc) += 8;
 			break;
 		case 0x01:
-			for(int i = 0; i < 8; i++) 
-			{
-				b[i] = memory[*pc + 1 + i];
-			}
-			R[0xB] = (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0];
+			R[0xB] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
 			*(pc) += 8;
-			break;	
+			break;
 		case 0x02:
-			for(int i = 0; i < 8; i++) 
-			{
-				b[i] = memory[*pc + 1 + i];
-			}
-			R[0xC] = (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0];
+			R[0xC] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
 			*(pc) += 8;
 			break;
  		case 0x03:
-			for(int i = 0; i < 8; i++) 
-			{
-				b[i] = memory[*pc + 1 + i];
-			}
-			R[0xD] = (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0];
+			R[0xD] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
 			*(pc) += 8;
 			break;
 		case 0x04:
-			for(int i = 0; i < 8; i++) 
-			{
-				b[i] = memory[*pc + 1 + i];
-			}
-			R[0xE] = (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0];
+			R[0xE] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
 			*(pc) += 8;
 			break;
  		case 0x05:
-			for(int i = 0; i < 8; i++) 
-			{
-				b[i] = memory[*pc + 1 + i];
-			}
-			R[0xF] = (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0];
+			R[0xF] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
 			*(pc) += 8;
 			break;
 		case 0x06:
-			for(int i = 0; i < 8; i++)
-			{
-				b[i] = memory[*pc + 1 + i];
-			}
-			memory[R[0xA]] = (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0];
+			memory[R[0xA]] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
 			*(pc) += 8;
+			break;
 		case 0x07:
-			for(int i = 0; i < 8; i++)
-			{
-				b[i] = memory[*pc + 1 + i];
-			}
-			memory[R[0xB]] = (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0];
+			memory[R[0xB]] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
 			*(pc) += 8;
+			break;
 		case 0x08:
-			for(int i = 0; i < 8; i++)
-			{
-				b[i] = memory[*pc + 1 + i];
-			}
-			memory[R[0xC]] = (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0];
+			memory[R[0xC]] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
 			*(pc) += 8;
+			break;
 		case 0x09:
-			for(int i = 0; i < 8; i++)
-			{
-				b[i] = memory[*pc + 1 + i];
-			}
-			memory[R[0xD]] = (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0];
+			memory[R[0xD]] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
 			*(pc) += 8;
+			break;
 		case 0x0A:
-			for(int i = 0; i < 8; i++)
-			{
-				b[i] = memory[*pc + 1 + i];
-			}
-			memory[R[0xE]] = (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0];
+			memory[R[0xE]] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
 			*(pc) += 8;
+			break;
 		case 0x0B:
-			for(int i = 0; i < 8; i++)
-			{
-				b[i] = memory[*pc + 1 + i];
-			}
-			memory[R[0xF]] = (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0];
+			memory[R[0xF]] = b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
 			*(pc) += 8;
+			break;
 		case 0x0C:
 			R[0xA] = R[0xA] + 1;
+			break;
 		case 0x0D:
 			R[b[0]] = R[b[0]] + 1;
 			*(pc) += 1;
+			break;
+		case 0x0E:
+			R[0xA] = R[0xA] - 1;
+			break;
 		case 0x0F:
 			R[b[0]] = R[b[0]] - 1;
 			*(pc) += 1;
+			break;
+		case 0x11:
+			R[0xA] = R[0xA] + b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0;
+			*(pc) += 8;
+			break;
 		case 0xFC:
 			*CW = 1;
 			break;
