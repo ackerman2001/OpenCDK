@@ -80,7 +80,7 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			*(pc) += 1;
 			break;
 		case 0x11:
-			R[0xA] = (R[0xA] + (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0]);
+			R[0xA] = R[0xA] + ((b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0]);
 			*(pc) += 1;
 			break;
 		case 0xFC:
