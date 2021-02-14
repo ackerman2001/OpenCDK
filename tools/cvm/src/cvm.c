@@ -10,6 +10,7 @@ int main(int argc, char** argv)
 {
 	GLFWwindow *window;
 	long R[0xF]; //registers
+	long SP = 0; //stack pointer
 	int file_size;
 	char CW = 0;
 	FILE *file;
@@ -38,7 +39,7 @@ int main(int argc, char** argv)
 	}
 	for(int pc = 0; pc < file_size; pc = pc + 1)
 	{
-		execution(g_memory[pc], g_memory, &pc, R, window, &CW);
+		execution(g_memory[pc], g_memory, &pc, R, window, &CW, &SP);
 		if(CW == 1) 
 		{
 			window = glfwCreateWindow(640,480, "Hello World", NULL, NULL);
