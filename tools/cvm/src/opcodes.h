@@ -84,18 +84,18 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			*(pc) += 1;
 			break;
 		case 0x12:
-			stack[*sp] =  *(pc) + 8;
-			*(sp) += 1;
+			stack[*SP] =  *(pc) + 8;
+			*(SP) += 1;
 			*(pc) = ((b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0]) - 1;
 			break;
 		case 0x13:
-			stack[*sp] =  *(pc);
-			*(sp) += 1;
+			stack[*SP] =  *(pc);
+			*(SP) += 1;
 			*(pc) = R[0xA] - 1;
 			break;
 		case 0x14:
-			*(sp) -= 1;
-			*(pc) = stack[*sp];
+			*(SP) -= 1;
+			*(pc) = stack[*SP];
 			break;
 		case 0xFC:
 			*CW = 1;
