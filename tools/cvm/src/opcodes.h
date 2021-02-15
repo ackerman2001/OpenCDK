@@ -117,7 +117,8 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			R[0xA] = memory[R[0xB]];
 			break;
 		case 0x19:
-			R[b0] = R[b1]
+			R[b[0]] = R[b[1]];
+			*(pc) += 2;
 			break;
 		case 0xFA:
 			scanf("%d", &memory[R[0xA]]);
