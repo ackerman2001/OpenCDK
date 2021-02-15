@@ -3,8 +3,8 @@
 #include<GLFW/glfw3.h>
 #include "opcodes.h"
 
-unsigned char *g_memory = NULL;
-unsigned char g_stack[1048576];
+unsigned long *g_memory = NULL;
+unsigned long g_stack[1048576];
 
 int main(int argc, char** argv)
 {
