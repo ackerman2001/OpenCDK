@@ -97,6 +97,22 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			*(SP) -= 1;
 			*(pc) = stack[*SP];
 			break;
+		case 0x15:
+			R[0xA] = R[0xA] * R[b[0]];
+			*(pc) += 1;
+			break;
+		case 0x16:
+			if(R[b[0]] == R[[b[1]])
+			{
+				*(pc) += 3;
+			}
+			break;
+		case 0x17:
+			if(R[b[0]] != R[[b[1]])
+			{
+				*(pc) += 3;
+			}
+			break;
 		case 0xFB:
 			printf("%ld", memory[R[0xA]]);
 			break;
