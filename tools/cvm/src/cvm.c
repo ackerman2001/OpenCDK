@@ -4,7 +4,7 @@
 #include "opcodes.h"
 
 unsigned char *g_memory = NULL;
-unsigned char *g_stack[1048576];
+unsigned char g_stack[1048576];
 
 int main(int argc, char** argv)
 {
