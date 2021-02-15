@@ -102,13 +102,13 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			*(pc) += 1;
 			break;
 		case 0x16:
-			if(R[b[0]] == R[[b[1]])
+			if(R[b[0]] == R[b[1]])
 			{
 				*(pc) += 3;
 			}
 			break;
 		case 0x17:
-			if(R[b[0]] != R[[b[1]])
+			if(R[b[0]] != R[b[1]])
 			{
 				*(pc) += 3;
 			}
