@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<GLFW/glfw3.h>
 
-void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GLFWwindow *window, int *CW, long *SP, unsigned char *stack)
+void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GLFWwindow *window, char *CW, long *SP, unsigned char *stack)
 {
 	//variables
 	unsigned long b[8];
