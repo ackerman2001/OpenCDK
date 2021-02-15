@@ -39,7 +39,7 @@ int main(int argc, char** argv)
 	}
 	for(int pc = 0; pc < file_size; pc = pc + 1)
 	{
-		execution(g_memory[pc], g_memory, &pc, R, window, &CW, &SP);
+		execution(g_memory[pc], g_memory, &pc, R, window, &CW, &SP, g_stack);
 		if(CW == 1) 
 		{
 			window = glfwCreateWindow(640,480, "Hello World", NULL, NULL);
