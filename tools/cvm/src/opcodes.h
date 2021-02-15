@@ -97,6 +97,9 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			*(SP) -= 1;
 			*(pc) = stack[*SP];
 			break;
+		case 0xFB:
+			printf("%ld", memory[R[0xA]]);
+			break;
 		case 0xFC:
 			*CW = 1;
 			break;
