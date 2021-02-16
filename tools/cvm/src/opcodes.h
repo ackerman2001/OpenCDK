@@ -122,14 +122,14 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			break;
 		case 0xFA:
 			scanf("%ld", &container);
-			memory[R[0xA]] = (container >> 56) & 0xFF;
-			memory[R[0xA]+1] = (container >> 48) & 0xFF;
-			memory[R[0xA]+2] = (container >> 40) & 0xFF;
-			memory[R[0xA]+3] = (container >> 32) & 0xFF;
-			memory[R[0xA]+4] = (container >> 24) & 0xFF;
-			memory[R[0xA]+5] = (container >> 16) & 0xFF;
-			memory[R[0xA]+6] = (container >> 8) & 0xFF;
-			memory[R[0xA]+7] = container & 0xFF;
+			memory[R[0xA]+7] = (container >> 56) & 0xFF;
+			memory[R[0xA]+6] = (container >> 48) & 0xFF;
+			memory[R[0xA]+5] = (container >> 40) & 0xFF;
+			memory[R[0xA]+4] = (container >> 32) & 0xFF;
+			memory[R[0xA]+3] = (container >> 24) & 0xFF;
+			memory[R[0xA]+2] = (container >> 16) & 0xFF;
+			memory[R[0xA]+1] = (container >> 8) & 0xFF;
+			memory[R[0xA]] = container & 0xFF;
 			break;
 		case 0xFB:
 			printf("%ld", (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0]);
