@@ -145,18 +145,11 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			*(pc) += 2;
 			break;
 		case 0xFA:
-			scanf("%ld", &container);
-			memory[R[0xA]+7] = (container >> 56) & 0xFF;
-			memory[R[0xA]+6] = (container >> 48) & 0xFF;
-			memory[R[0xA]+5] = (container >> 40) & 0xFF;
-			memory[R[0xA]+4] = (container >> 32) & 0xFF;
-			memory[R[0xA]+3] = (container >> 24) & 0xFF;
-			memory[R[0xA]+2] = (container >> 16) & 0xFF;
-			memory[R[0xA]+1] = (container >> 8) & 0xFF;
-			memory[R[0xA]] = container & 0xFF;
+			scanf("%ld", &R[b[0]]);
+			*pc += 1;
 			break;
 		case 0xFB:
-			container = ((unsigned long long)memory[R[b[0]]+7] << 56) | ((unsigned long long)memory[R[b[0]]+6] << 48) | ((unsigned long long)memory[R[b[0]]+5] << 40) | ((unsigned long long)memory[R[b[0]]+4]<< 32) | (memory[R[b[0]]+3]<< 24) | (memory[R[b[0]]+2] << 16) | (memory[R[b[0]]+1]<< 8) | memory[R[b[0]]];
+			container = (((unsigned long long)memory[R[b[0]]+7] << 56) | ((unsigned long long)memory[R[b[0]]+6] << 48) | ((unsigned long long)memory[R[b[0]]+5] << 40) | ((unsigned long long)memory[R[b[0]]+4]<< 32) | (memory[R[b[0]]+3]<< 24) | (memory[R[b[0]]+2] << 16) | (memory[R[b[0]]+1]<< 8) | memory[R[b[0]]])&0xFFFFFFFFFFFFFFFF;
 			printf("%ld", container);
 			*pc += 1;
 			break;
