@@ -120,6 +120,18 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			R[b[0]] = R[b[1]];
 			*(pc) += 2;
 			break;
+		case 0x20:
+			container = R[b[0]];
+			memory[R[0xA]+7] = (container >> 56) & 0xFF;
+			memory[R[0xA]+6] = (container >> 48) & 0xFF;
+			memory[R[0xA]+5] = (container >> 40) & 0xFF;
+			memory[R[0xA]+4] = (container >> 32) & 0xFF;
+			memory[R[0xA]+3] = (container >> 24) & 0xFF;
+			memory[R[0xA]+2] = (container >> 16) & 0xFF;
+			memory[R[0xA]+1] = (container >> 8) & 0xFF;
+			memory[R[0xA]] = container & 0xFF;
+			*(pc) += 1;
+			break;
 		case 0xFA:
 			scanf("%ld", &container);
 			memory[R[0xA]+7] = (container >> 56) & 0xFF;
