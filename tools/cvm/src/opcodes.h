@@ -156,7 +156,8 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			memory[R[0xA]] = container & 0xFF;
 			break;
 		case 0xFB:
-			printf("%ld", (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0]);
+			container = memory[R[b[0]+7]] << 56) | (memory[R[b[0]+6]] << 48) | (memory[R[b[0]+5]] << 40) | (memory[R[b[0]+4]]<< 32) | (memory[R[b[0]+3]]<< 24) | (memory[R[b[0]+2]] << 16) | (memory[R[b[0]+1]]<< 8) | memory[R[b[0]]]);
+			printf("%ld", memory[R[b1]]);
 			*pc += 8;
 			break;
 		case 0xFC:
