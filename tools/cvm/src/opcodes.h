@@ -84,7 +84,7 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			*(pc) += 1;
 			break;
 		case 0x12:
-			stack[*SP] = *(pc) + 8;
+			stack[*SP] = *(pc) + 9;
 			*(SP) += 1;
 			*(pc) = ((b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0]) - 1;
 			break;
@@ -95,7 +95,7 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			break;
 		case 0x14:
 			*(SP) -= 1;
-			*(pc) = stack[*SP];
+			*(pc) = stack[*SP] - 1;
 			break;
 		case 0x15:
 			R[0xA] = R[0xA] * R[b[0]];
@@ -105,12 +105,16 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			if(R[b[0]] == R[b[1]])
 			{
 				*(pc) += 3;
+			} else {
+				*(pc) += 2;
 			}
 			break;
 		case 0x17:
 			if(R[b[0]] != R[b[1]])
 			{
 				*(pc) += 3;
+			} else {
+				*(pc) += 2;
 			}
 			break;
 		case 0x18:
@@ -143,6 +147,10 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			memory[R[b[0]]+1] = (container >> 8) & 0xFF;
 			memory[R[b[0]]] = container & 0xFF;
 			*(pc) += 2;
+			break;
+		case 0x22:
+			*(pc) = (b[7] << 56) | (b[6] << 48) | (b[5] << 40) | (b[4] << 32) | (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0];
+			*(pc) -= 1;
 			break;
 		case 0xFA:
 			scanf("%lu", &R[b[0]]);
