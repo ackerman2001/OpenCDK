@@ -145,12 +145,12 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			*(pc) += 2;
 			break;
 		case 0xFA:
-			scanf("%ld", &R[b[0]]);
+			scanf("%lu", &R[b[0]]);
 			*pc += 1;
 			break;
 		case 0xFB:
 			container = (((unsigned long long)memory[R[b[0]]+7] << 56) | ((unsigned long long)memory[R[b[0]]+6] << 48) | ((unsigned long long)memory[R[b[0]]+5] << 40) | ((unsigned long long)memory[R[b[0]]+4]<< 32) | (memory[R[b[0]]+3]<< 24) | (memory[R[b[0]]+2] << 16) | (memory[R[b[0]]+1]<< 8) | memory[R[b[0]]])&0xFFFFFFFFFFFFFFFF;
-			printf("%ld", container);
+			printf("%lu", container);
 			*pc += 1;
 			break;
 		case 0xFC:
