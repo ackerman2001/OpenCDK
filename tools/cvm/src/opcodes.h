@@ -71,6 +71,9 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			R[b[0]] = R[b[0]] + 1;
 			*(pc) += 1;
 			break;
+		case 0x0E:
+			R[0xA] = R[0xA] - 1;
+			break;
 		case 0x0F:
 			R[b[0]] = R[b[0]] - 1;
 			*(pc) += 1;
