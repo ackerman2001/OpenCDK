@@ -43,7 +43,7 @@ int main(int argc, char** argv)
 		if(CW == 1) 
 		{
 			window = glfwCreateWindow(640,480, "Hello World", NULL, NULL);
-			CW == 0;
+			CW = 0;
 		}
 	}
 	while (!glfwWindowShouldClose(window))
