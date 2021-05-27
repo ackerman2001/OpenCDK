@@ -2,6 +2,21 @@
 #include<stdlib.h>
 #include<GLFW/glfw3.h>
 
+void v_memory(unsigned char *memory)
+{	
+	int used_memory = 0; //local var
+	for(int i = 0; i < 1024; i++)
+	{
+		if(memory[i] > 0)
+		{
+			used_memory += 1;
+		}
+	}
+	
+	printf("Virtual Memory used = %d bytes \n", used_memory);
+}
+
+
 void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GLFWwindow *window, char *CW, long *SP, unsigned char *stack)
 {
 	//variables
@@ -182,6 +197,7 @@ void execution(unsigned char opcode, unsigned char *memory, int *pc, long *R, GL
 			break;
 		case 0xFF:
 			exit(0);
+			v_memory(memory);
 			break;
 	}
 }
